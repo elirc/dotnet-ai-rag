@@ -1,0 +1,5 @@
+* @maintainers
+/src/Api/ @backend-maintainers
+/src/Infrastructure/ @backend-maintainers
+/frontend/ @frontend-maintainers
+/docs/ @docs-maintainers

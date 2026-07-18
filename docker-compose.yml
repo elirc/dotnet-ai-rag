@@ -1,0 +1,47 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: netaiops-postgres
+    environment:
+      POSTGRES_DB: netaiops
+      POSTGRES_USER: netaiops
+      POSTGRES_PASSWORD: netaiops_dev_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - netaiops-postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U netaiops -d netaiops"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  api:
+    profiles: ["app"]
+    build:
+      context: .
+      dockerfile: src/Api/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:8080
+      ConnectionStrings__Postgres: Host=postgres;Port=5432;Database=netaiops;Username=netaiops;Password=netaiops_dev_password
+      Jwt__Issuer: NetAiOps
+      Jwt__Audience: NetAiOps.Frontend
+      Jwt__SigningKey: replace-this-dev-only-signing-key-with-at-least-32-characters
+      Cors__AllowedOrigins__0: http://localhost:5173
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+  frontend:
+    profiles: ["app"]
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    ports:
+      - "8081:80"
+    depends_on:
+      - api
+
+volumes:
+  netaiops-postgres-data:
