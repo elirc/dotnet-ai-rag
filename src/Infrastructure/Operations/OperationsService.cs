@@ -1,6 +1,8 @@
+using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
 using NetAiOps.Application.Common;
 using NetAiOps.Application.Operations;
+using NetAiOps.Application.Retrieval;
 using NetAiOps.Domain.Agents;
 using NetAiOps.Domain.Incidents;
 using NetAiOps.Domain.Operations;
@@ -313,33 +315,105 @@ public sealed class OperationsService(NetAiOpsDbContext db) : IOperationsService
             return null;
         }
 
-        var now = DateTimeOffset.UtcNow;
-        var evidenceCount = await db.Logs.CountAsync(x => x.ServiceName == incident.PrimaryService && x.Timestamp >= incident.DetectedAt.AddHours(-2), ct);
+        var startedAt = DateTimeOffset.UtcNow;
+        var logWindowStart = incident.DetectedAt.AddHours(-2);
+        var logWindowEnd = startedAt;
+        var logQuery = db.Logs.AsNoTracking().Where(x =>
+            x.ServiceName == incident.PrimaryService &&
+            x.Timestamp >= logWindowStart &&
+            x.Timestamp <= logWindowEnd);
+        var evidenceCount = await logQuery.CountAsync(ct);
+        var evidenceIds = await logQuery.OrderByDescending(x => x.Timestamp)
+            .ThenBy(x => x.Id)
+            .Select(x => x.Id)
+            .Take(20)
+            .ToListAsync(ct);
+        var logCompletedAt = DateTimeOffset.UtcNow;
+
+        var retrievalStartedAt = DateTimeOffset.UtcNow;
+        var retrievalQuery = string.Join(' ', new[]
+        {
+            incident.PrimaryService,
+            incident.Title,
+            incident.Description,
+            incident.AffectedServicesCsv ?? string.Empty
+        });
+        var documents = await db.KnowledgeDocuments.AsNoTracking()
+            .Select(x => new RetrievalDocument(x.Id, x.Title, x.TagsCsv, x.Content))
+            .ToListAsync(ct);
+        var matches = LexicalRetriever.Search(documents, retrievalQuery, topK: 3);
+        var retrievalCompletedAt = DateTimeOffset.UtcNow;
+        var completedAt = DateTimeOffset.UtcNow;
+        var recommendation = matches.Count > 0
+            ? $"Review the retrieved runbook '{matches[0].Title}' and validate its steps against the bounded log window before taking action."
+            : "No relevant runbook matched. Continue with manual investigation and do not infer a mitigation from absent evidence.";
+        var inputJson = JsonSerializer.Serialize(new
+        {
+            incidentId = incident.Id,
+            service = incident.PrimaryService,
+            logWindowStart,
+            logWindowEnd
+        });
+        var outputJson = JsonSerializer.Serialize(new
+        {
+            mode = "deterministic_retrieval",
+            modelUsed = false,
+            modelConfidence = (double?)null,
+            evidenceCount,
+            runbookMatches = matches.Select(match => new
+            {
+                documentId = match.DocumentId,
+                match.Title,
+                heuristicScore = match.HeuristicScore,
+                match.MatchedTerms
+            }),
+            recommendedMitigation = recommendation
+        });
         var agentRun = new AgentRun
         {
             Id = Guid.NewGuid(),
             AgentName = "IncidentInvestigationAgent",
-            InputJson = $$"""{"incidentId":"{{incident.Id}}","service":"{{incident.PrimaryService}}"}""",
-            OutputJson = $$"""{"rootCauseHypothesis":"Investigate {{incident.PrimaryService}} errors around detection window.","evidenceCount":{{evidenceCount}},"recommendedMitigation":"Follow linked runbook and validate rollback/queue pressure before risky action.","confidence":0.72}""",
+            InputJson = inputJson,
+            OutputJson = outputJson,
             Status = "Completed",
-            StartedAt = now,
-            CompletedAt = now.AddSeconds(8),
+            StartedAt = startedAt,
+            CompletedAt = completedAt,
             CreatedByUserId = context.UserId,
             RelatedIncidentId = incident.Id,
-            TotalToolCalls = 3,
-            TotalEstimatedTokens = 1800,
-            EstimatedCost = 0.012m
+            TotalToolCalls = 2,
+            TotalEstimatedTokens = 0,
+            EstimatedCost = 0m
         };
         agentRun.ToolCalls.Add(new Domain.Agents.AgentToolCall
         {
             Id = Guid.NewGuid(),
             AgentRunId = agentRun.Id,
             ToolName = "SearchLogs",
-            InputJson = $$"""{"service":"{{incident.PrimaryService}}"}""",
-            OutputJson = $$"""{"matchingLogs":{{evidenceCount}}}""",
+            InputJson = JsonSerializer.Serialize(new { service = incident.PrimaryService, logWindowStart, logWindowEnd }),
+            OutputJson = JsonSerializer.Serialize(new { matchingLogs = evidenceCount, sampleLogIds = evidenceIds }),
             Status = "Succeeded",
-            StartedAt = now,
-            CompletedAt = now.AddSeconds(2)
+            StartedAt = startedAt,
+            CompletedAt = logCompletedAt
+        });
+        agentRun.ToolCalls.Add(new Domain.Agents.AgentToolCall
+        {
+            Id = Guid.NewGuid(),
+            AgentRunId = agentRun.Id,
+            ToolName = "SearchKnowledge",
+            InputJson = JsonSerializer.Serialize(new { query = retrievalQuery, topK = 3, minimumScore = 3 }),
+            OutputJson = JsonSerializer.Serialize(new
+            {
+                matches = matches.Select(match => new
+                {
+                    documentId = match.DocumentId,
+                    match.Title,
+                    heuristicScore = match.HeuristicScore,
+                    match.MatchedTerms
+                })
+            }),
+            Status = "Succeeded",
+            StartedAt = retrievalStartedAt,
+            CompletedAt = retrievalCompletedAt
         });
         db.AgentRuns.Add(agentRun);
         db.HumanApprovals.Add(new HumanApproval
@@ -349,12 +423,14 @@ public sealed class OperationsService(NetAiOpsDbContext db) : IOperationsService
             RecommendationJson = agentRun.OutputJson,
             Status = "Pending",
             RequestedByUserId = context.UserId,
-            CreatedAt = now
+            CreatedAt = completedAt
         });
-        incident.AiRootCauseCandidate = $"Agent hypothesis: review {incident.PrimaryService} errors and runbook mitigations.";
+        incident.AiRootCauseCandidate = matches.Count > 0
+            ? $"Deterministic retrieval candidate: review {matches[0].Title} against incident evidence."
+            : "No relevant runbook matched; manual investigation is required.";
         incident.AiRootCauseStatus = "PendingApproval";
-        incident.UpdatedAt = now;
-        AddGlobalAudit("Incident", incident.Id, context.UserId, "AgentRunCreated", "Investigation agent completed and created a pending approval.", now);
+        incident.UpdatedAt = completedAt;
+        AddGlobalAudit("Incident", incident.Id, context.UserId, "AgentRunCreated", "Deterministic investigation completed and created a pending approval.", completedAt);
         await db.SaveChangesAsync(ct);
 
         return ToAgentRunDto(agentRun);

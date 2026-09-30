@@ -77,3 +77,7 @@ npm run build
 - [MCP Mock Integrations](docs/mcp-mock-integrations.md)
 - [Evaluation Harness](docs/eval-harness.md)
 - [Phase Journals](docs/phases)
+
+## Source-based improvement course
+
+[Start the course](astraupskill/README.md). Trace deterministic incident retrieval, truthful evidence, and pending human approval.

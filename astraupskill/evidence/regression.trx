@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="b8bd568e-7d1a-4280-8706-6782070acda7" name="Owner@DESKTOP-T0PFEUT 2026-09-19 14:59:46" runUser="DESKTOP-T0PFEUT\Owner" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-19T14:59:46.8088681-07:00" queuing="2026-09-19T14:59:46.8088688-07:00" start="2026-09-19T14:59:11.8302947-07:00" finish="2026-09-19T14:59:58.9314308-07:00" />
+  <TestSettings name="default" id="52de3a59-8da5-4af9-b224-22ae259d4b7e">
+    <Deployment runDeploymentRoot="Owner_DESKTOP-T0PFEUT_2026-09-19_14_59_46" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="a591d516-a309-4996-885e-6d9ba50621c1" testId="7b71d63c-545f-a6c7-8678-381efdf4a683" testName="NetAiOps.UnitTests.LexicalRetrieverTests.Billing_and_auth_queries_rank_the_matching_runbook_first" computerName="DESKTOP-T0PFEUT" duration="00:00:00.0019741" startTime="2026-09-19T14:59:46.7379672-07:00" endTime="2026-09-19T14:59:46.7379679-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a591d516-a309-4996-885e-6d9ba50621c1" />
+    <UnitTestResult executionId="fc6bb1a7-18ac-4357-a26c-bc6cbf7ef116" testId="33ae6615-3d12-8fcd-2b6b-40886ae356b5" testName="NetAiOps.UnitTests.OperationsServiceTests.Investigation_persists_truthful_serialized_evidence_and_pending_approval" computerName="DESKTOP-T0PFEUT" duration="00:00:10.6788925" startTime="2026-09-19T14:59:55.5631329-07:00" endTime="2026-09-19T14:59:55.5631342-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fc6bb1a7-18ac-4357-a26c-bc6cbf7ef116" />
+    <UnitTestResult executionId="1cb624ae-03a7-4e4e-94bd-3bdc4f6ac822" testId="6f36fe52-b18c-65d4-ca9a-e80380ebdf90" testName="NetAiOps.UnitTests.RequestContextTests.FromClaims_MapsRoleCapabilities(role: &quot;Admin&quot;, isAdminOrEngineer: True, canMutateSupportWork: True)" computerName="DESKTOP-T0PFEUT" duration="00:00:00.0000753" startTime="2026-09-19T14:59:45.3269538-07:00" endTime="2026-09-19T14:59:45.3269541-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1cb624ae-03a7-4e4e-94bd-3bdc4f6ac822" />
+    <UnitTestResult executionId="fcbc99da-30ca-4be6-b304-169894dcf273" testId="2b9d77ac-28ca-8af4-359c-dc1c184473bf" testName="NetAiOps.UnitTests.LexicalRetrieverTests.Ranking_is_stable_bounded_and_uses_title_then_id_for_ties" computerName="DESKTOP-T0PFEUT" duration="00:00:00.4454016" startTime="2026-09-19T14:59:46.7294017-07:00" endTime="2026-09-19T14:59:46.7294025-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fcbc99da-30ca-4be6-b304-169894dcf273" />
+    <UnitTestResult executionId="9f520b7c-bc7f-48b2-9a6c-70af6735ff83" testId="b2b87ff7-8cfc-47ad-851a-a2602a957cb2" testName="NetAiOps.UnitTests.LexicalRetrieverTests.Checked_in_evaluation_cases_are_loaded_and_pass" computerName="DESKTOP-T0PFEUT" duration="00:00:01.3837823" startTime="2026-09-19T14:59:46.2781472-07:00" endTime="2026-09-19T14:59:46.2781479-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9f520b7c-bc7f-48b2-9a6c-70af6735ff83" />
+    <UnitTestResult executionId="93cefc76-1729-45d3-bb10-2a698a606815" testId="081f29cb-645b-2bc1-5ccf-2f13dbb836fe" testName="NetAiOps.UnitTests.OperationsServiceTests.Investigation_rejects_viewer_without_persisting_run_or_approval" computerName="DESKTOP-T0PFEUT" duration="00:00:00.2101221" startTime="2026-09-19T14:59:55.7736147-07:00" endTime="2026-09-19T14:59:55.7736155-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="93cefc76-1729-45d3-bb10-2a698a606815" />
+    <UnitTestResult executionId="5b5fbd8a-dea1-49c8-acae-1abfeee03310" testId="cff097f6-b842-56fa-e022-c2e511e6264f" testName="NetAiOps.UnitTests.RequestContextTests.FromClaims_MapsRoleCapabilities(role: &quot;Viewer&quot;, isAdminOrEngineer: False, canMutateSupportWork: False)" computerName="DESKTOP-T0PFEUT" duration="00:00:00.0000605" startTime="2026-09-19T14:59:45.3270879-07:00" endTime="2026-09-19T14:59:45.3270881-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5b5fbd8a-dea1-49c8-acae-1abfeee03310" />
+    <UnitTestResult executionId="904e5920-bf7c-4ff5-a676-2ce111a425a6" testId="81f61ce0-a6ef-6247-8752-84c81edee04c" testName="NetAiOps.UnitTests.BCryptPasswordHasherTests.Verify_ReturnsTrue_ForMatchingPassword" computerName="DESKTOP-T0PFEUT" duration="00:00:11.2940085" startTime="2026-09-19T14:59:56.3362260-07:00" endTime="2026-09-19T14:59:56.3362269-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="904e5920-bf7c-4ff5-a676-2ce111a425a6" />
+    <UnitTestResult executionId="18596df5-c15c-4cc1-bc2f-185a9d961b8f" testId="e6b34bb2-558a-b651-d738-fc1835ac1d72" testName="NetAiOps.UnitTests.LexicalRetrieverTests.Unrelated_or_stop_word_only_queries_return_no_match" computerName="DESKTOP-T0PFEUT" duration="00:00:00.0060059" startTime="2026-09-19T14:59:46.7357739-07:00" endTime="2026-09-19T14:59:46.7357746-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="18596df5-c15c-4cc1-bc2f-185a9d961b8f" />
+    <UnitTestResult executionId="c049b01f-6269-4521-864d-c7262680e4b9" testId="e5c65d7a-0f88-5fa4-0458-9d6de317177f" testName="NetAiOps.UnitTests.RequestContextTests.FromClaims_MapsRoleCapabilities(role: &quot;SupportAnalyst&quot;, isAdminOrEngineer: False, canMutateSupportWork: True)" computerName="DESKTOP-T0PFEUT" duration="00:00:00.4111979" startTime="2026-09-19T14:59:45.3105233-07:00" endTime="2026-09-19T14:59:45.3106298-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c049b01f-6269-4521-864d-c7262680e4b9" />
+    <UnitTestResult executionId="2a00e83c-bf3f-4450-9fed-7eba5da8d592" testId="5334f4d9-7f46-9a72-2226-f49908d92dea" testName="NetAiOps.UnitTests.RequestContextTests.FromClaims_MapsRoleCapabilities(role: &quot;Engineer&quot;, isAdminOrEngineer: True, canMutateSupportWork: True)" computerName="DESKTOP-T0PFEUT" duration="00:00:00.0010889" startTime="2026-09-19T14:59:45.3255144-07:00" endTime="2026-09-19T14:59:45.3255149-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2a00e83c-bf3f-4450-9fed-7eba5da8d592" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="NetAiOps.UnitTests.OperationsServiceTests.Investigation_rejects_viewer_without_persisting_run_or_approval" storage="c:\users\owner\desktop\astraorganized2\astra-remaining-improvements\stage\6ee92f3ab313\tests\unittests\bin\debug\net8.0\netaiops.unittests.dll" id="081f29cb-645b-2bc1-5ccf-2f13dbb836fe">
+      <Execution id="93cefc76-1729-45d3-bb10-2a698a606815" />
+      <TestMethod codeBase="C:\Users\Owner\Desktop\AstraOrganized2\astra-remaining-improvements\stage\6ee92f3ab313\tests\UnitTests\bin\Debug\net8.0\NetAiOps.UnitTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="NetAiOps.UnitTests.OperationsServiceTests" name="Investigation_rejects_viewer_without_persisting_run_or_approval" />
+    </UnitTest>
+    <UnitTest name="NetAiOps.UnitTests.RequestContextTests.FromClaims_MapsRoleCapabilities(role: &quot;SupportAnalyst&quot;, isAdminOrEngineer: False, canMutateSupportWork: True)" storage="c:\users\owner\desktop\astraorganized2\astra-remaining-improvements\stage\6ee92f3ab313\tests\unittests\bin\debug\net8.0\netaiops.unittests.dll" id="e5c65d7a-0f88-5fa4-0458-9d6de317177f">
+      <Execution id="c049b01f-6269-4521-864d-c7262680e4b9" />
+      <TestMethod codeBase="C:\Users\Owner\Desktop\AstraOrganized2\astra-remaining-improvements\stage\6ee92f3ab313\tests\UnitTests\bin\Debug\net8.0\NetAiOps.UnitTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="NetAiOps.UnitTests.RequestContextTests" name="FromClaims_MapsRoleCapabilities" />
+    </UnitTest>
+    <UnitTest name="NetAiOps.UnitTests.OperationsServiceTests.Investigation_persists_truthful_serialized_evidence_and_pending_approval" storage="c:\users\owner\desktop\astraorganized2\astra-remaining-improvements\stage\6ee92f3ab313\tests\unittests\bin\debug\net8.0\netaiops.unittests.dll" id="33ae6615-3d12-8fcd-2b6b-40886ae356b5">
+      <Execution id="fc6bb1a7-18ac-4357-a26c-bc6cbf7ef116" />
+      <TestMethod codeBase="C:\Users\Owner\Desktop\AstraOrganized2\astra-remaining-improvements\stage\6ee92f3ab313\tests\UnitTests\bin\Debug\net8.0\NetAiOps.UnitTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="NetAiOps.UnitTests.OperationsServiceTests" name="Investigation_persists_truthful_serialized_evidence_and_pending_approval" />
+    </UnitTest>
+    <UnitTest name="NetAiOps.UnitTests.LexicalRetrieverTests.Unrelated_or_stop_word_only_queries_return_no_match" storage="c:\users\owner\desktop\astraorganized2\astra-remaining-improvements\stage\6ee92f3ab313\tests\unittests\bin\debug\net8.0\netaiops.unittests.dll" id="e6b34bb2-558a-b651-d738-fc1835ac1d72">
+      <Execution id="18596df5-c15c-4cc1-bc2f-185a9d961b8f" />
+      <TestMethod codeBase="C:\Users\Owner\Desktop\AstraOrganized2\astra-remaining-improvements\stage\6ee92f3ab313\tests\UnitTests\bin\Debug\net8.0\NetAiOps.UnitTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="NetAiOps.UnitTests.LexicalRetrieverTests" name="Unrelated_or_stop_word_only_queries_return_no_match" />
+    </UnitTest>
+    <UnitTest name="NetAiOps.UnitTests.RequestContextTests.FromClaims_MapsRoleCapabilities(role: &quot;Admin&quot;, isAdminOrEngineer: True, canMutateSupportWork: True)" storage="c:\users\owner\desktop\astraorganized2\astra-remaining-improvements\stage\6ee92f3ab313\tests\unittests\bin\debug\net8.0\netaiops.unittests.dll" id="6f36fe52-b18c-65d4-ca9a-e80380ebdf90">
+      <Execution id="1cb624ae-03a7-4e4e-94bd-3bdc4f6ac822" />
+      <TestMethod codeBase="C:\Users\Owner\Desktop\AstraOrganized2\astra-remaining-improvements\stage\6ee92f3ab313\tests\UnitTests\bin\Debug\net8.0\NetAiOps.UnitTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="NetAiOps.UnitTests.RequestContextTests" name="FromClaims_MapsRoleCapabilities" />
+    </UnitTest>
+    <UnitTest name="NetAiOps.UnitTests.LexicalRetrieverTests.Checked_in_evaluation_cases_are_loaded_and_pass" storage="c:\users\owner\desktop\astraorganized2\astra-remaining-improvements\stage\6ee92f3ab313\tests\unittests\bin\debug\net8.0\netaiops.unittests.dll" id="b2b87ff7-8cfc-47ad-851a-a2602a957cb2">
+      <Execution id="9f520b7c-bc7f-48b2-9a6c-70af6735ff83" />
+      <TestMethod codeBase="C:\Users\Owner\Desktop\AstraOrganized2\astra-remaining-improvements\stage\6ee92f3ab313\tests\UnitTests\bin\Debug\net8.0\NetAiOps.UnitTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="NetAiOps.UnitTests.LexicalRetrieverTests" name="Checked_in_evaluation_cases_are_loaded_and_pass" />
+    </UnitTest>
+    <UnitTest name="NetAiOps.UnitTests.BCryptPasswordHasherTests.Verify_ReturnsTrue_ForMatchingPassword" storage="c:\users\owner\desktop\astraorganized2\astra-remaining-improvements\stage\6ee92f3ab313\tests\unittests\bin\debug\net8.0\netaiops.unittests.dll" id="81f61ce0-a6ef-6247-8752-84c81edee04c">
+      <Execution id="904e5920-bf7c-4ff5-a676-2ce111a425a6" />
+      <TestMethod codeBase="C:\Users\Owner\Desktop\AstraOrganized2\astra-remaining-improvements\stage\6ee92f3ab313\tests\UnitTests\bin\Debug\net8.0\NetAiOps.UnitTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="NetAiOps.UnitTests.BCryptPasswordHasherTests" name="Verify_ReturnsTrue_ForMatchingPassword" />
+    </UnitTest>
+    <UnitTest name="NetAiOps.UnitTests.RequestContextTests.FromClaims_MapsRoleCapabilities(role: &quot;Engineer&quot;, isAdminOrEngineer: True, canMutateSupportWork: True)" storage="c:\users\owner\desktop\astraorganized2\astra-remaining-improvements\stage\6ee92f3ab313\tests\unittests\bin\debug\net8.0\netaiops.unittests.dll" id="5334f4d9-7f46-9a72-2226-f49908d92dea">
+      <Execution id="2a00e83c-bf3f-4450-9fed-7eba5da8d592" />
+      <TestMethod codeBase="C:\Users\Owner\Desktop\AstraOrganized2\astra-remaining-improvements\stage\6ee92f3ab313\tests\UnitTests\bin\Debug\net8.0\NetAiOps.UnitTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="NetAiOps.UnitTests.RequestContextTests" name="FromClaims_MapsRoleCapabilities" />
+    </UnitTest>
+    <UnitTest name="NetAiOps.UnitTests.RequestContextTests.FromClaims_MapsRoleCapabilities(role: &quot;Viewer&quot;, isAdminOrEngineer: False, canMutateSupportWork: False)" storage="c:\users\owner\desktop\astraorganized2\astra-remaining-improvements\stage\6ee92f3ab313\tests\unittests\bin\debug\net8.0\netaiops.unittests.dll" id="cff097f6-b842-56fa-e022-c2e511e6264f">
+      <Execution id="5b5fbd8a-dea1-49c8-acae-1abfeee03310" />
+      <TestMethod codeBase="C:\Users\Owner\Desktop\AstraOrganized2\astra-remaining-improvements\stage\6ee92f3ab313\tests\UnitTests\bin\Debug\net8.0\NetAiOps.UnitTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="NetAiOps.UnitTests.RequestContextTests" name="FromClaims_MapsRoleCapabilities" />
+    </UnitTest>
+    <UnitTest name="NetAiOps.UnitTests.LexicalRetrieverTests.Billing_and_auth_queries_rank_the_matching_runbook_first" storage="c:\users\owner\desktop\astraorganized2\astra-remaining-improvements\stage\6ee92f3ab313\tests\unittests\bin\debug\net8.0\netaiops.unittests.dll" id="7b71d63c-545f-a6c7-8678-381efdf4a683">
+      <Execution id="a591d516-a309-4996-885e-6d9ba50621c1" />
+      <TestMethod codeBase="C:\Users\Owner\Desktop\AstraOrganized2\astra-remaining-improvements\stage\6ee92f3ab313\tests\UnitTests\bin\Debug\net8.0\NetAiOps.UnitTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="NetAiOps.UnitTests.LexicalRetrieverTests" name="Billing_and_auth_queries_rank_the_matching_runbook_first" />
+    </UnitTest>
+    <UnitTest name="NetAiOps.UnitTests.LexicalRetrieverTests.Ranking_is_stable_bounded_and_uses_title_then_id_for_ties" storage="c:\users\owner\desktop\astraorganized2\astra-remaining-improvements\stage\6ee92f3ab313\tests\unittests\bin\debug\net8.0\netaiops.unittests.dll" id="2b9d77ac-28ca-8af4-359c-dc1c184473bf">
+      <Execution id="fcbc99da-30ca-4be6-b304-169894dcf273" />
+      <TestMethod codeBase="C:\Users\Owner\Desktop\AstraOrganized2\astra-remaining-improvements\stage\6ee92f3ab313\tests\UnitTests\bin\Debug\net8.0\NetAiOps.UnitTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="NetAiOps.UnitTests.LexicalRetrieverTests" name="Ranking_is_stable_bounded_and_uses_title_then_id_for_ties" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="7b71d63c-545f-a6c7-8678-381efdf4a683" executionId="a591d516-a309-4996-885e-6d9ba50621c1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="33ae6615-3d12-8fcd-2b6b-40886ae356b5" executionId="fc6bb1a7-18ac-4357-a26c-bc6cbf7ef116" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6f36fe52-b18c-65d4-ca9a-e80380ebdf90" executionId="1cb624ae-03a7-4e4e-94bd-3bdc4f6ac822" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2b9d77ac-28ca-8af4-359c-dc1c184473bf" executionId="fcbc99da-30ca-4be6-b304-169894dcf273" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b2b87ff7-8cfc-47ad-851a-a2602a957cb2" executionId="9f520b7c-bc7f-48b2-9a6c-70af6735ff83" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="081f29cb-645b-2bc1-5ccf-2f13dbb836fe" executionId="93cefc76-1729-45d3-bb10-2a698a606815" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cff097f6-b842-56fa-e022-c2e511e6264f" executionId="5b5fbd8a-dea1-49c8-acae-1abfeee03310" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="81f61ce0-a6ef-6247-8752-84c81edee04c" executionId="904e5920-bf7c-4ff5-a676-2ce111a425a6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e6b34bb2-558a-b651-d738-fc1835ac1d72" executionId="18596df5-c15c-4cc1-bc2f-185a9d961b8f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e5c65d7a-0f88-5fa4-0458-9d6de317177f" executionId="c049b01f-6269-4521-864d-c7262680e4b9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5334f4d9-7f46-9a72-2226-f49908d92dea" executionId="2a00e83c-bf3f-4450-9fed-7eba5da8d592" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="11" executed="11" passed="11" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.01] xUnit.net VSTest Adapter v2.5.3.1+6b60a9e56a (64-bit .NET 8.0.31)&#xD;
+[xUnit.net 00:00:06.77]   Discovering: NetAiOps.UnitTests&#xD;
+[xUnit.net 00:00:07.74]   Discovered:  NetAiOps.UnitTests&#xD;
+[xUnit.net 00:00:07.75]   Starting:    NetAiOps.UnitTests&#xD;
+[xUnit.net 00:00:20.67]   Finished:    NetAiOps.UnitTests&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

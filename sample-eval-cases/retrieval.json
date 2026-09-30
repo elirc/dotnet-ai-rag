@@ -1,0 +1,17 @@
+[
+  {
+    "id": "billing-timeout",
+    "query": "BillingService timeout checkout",
+    "expectedTopTitle": "BillingService Timeout Runbook"
+  },
+  {
+    "id": "auth-signing-key",
+    "query": "AuthService signing key",
+    "expectedTopTitle": "AuthService Runbook"
+  },
+  {
+    "id": "unrelated-printer",
+    "query": "printer toner tray",
+    "expectedMatches": 0
+  }
+]
