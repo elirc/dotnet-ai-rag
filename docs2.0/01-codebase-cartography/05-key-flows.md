@@ -2,15 +2,15 @@
 
 ## Ticket List
 
-Frontend [TicketsPage](../../frontend/src/pages/TicketsPage.tsx#L6-L29) calls [getTickets](../../frontend/src/app/api.ts#L53-L56). The API endpoint is [TicketsController.List](../../src/Api/Controllers/TicketsController.cs#L13-L16). The service clamps pagination, filters by readable resource scope, counts total rows, and maps DTOs in [OperationsService.ListTicketsAsync](../../src/Infrastructure/Operations/OperationsService.cs#L16-L58). Ticket tables and relationships are mapped in [NetAiOpsDbContext](../../src/Infrastructure/Persistence/NetAiOpsDbContext.cs#L53-L108).
+Frontend [TicketsPage](../../frontend/src/pages/TicketsPage.tsx#L6-L29) calls [getTickets](../../frontend/src/app/api.ts#L53-L56). The API endpoint is [TicketsController.List](../../src/Api/Controllers/TicketsController.cs#L13-L16). The service clamps pagination, filters by readable resource scope, counts total rows, and maps DTOs in [OperationsService.ListTicketsAsync](../../src/Infrastructure/Operations/OperationsService.cs#L18-L60). Ticket tables and relationships are mapped in [NetAiOpsDbContext](../../src/Infrastructure/Persistence/NetAiOpsDbContext.cs#L53-L108).
 
 ## Ticket Mutation
 
-[TicketsController](../../src/Api/Controllers/TicketsController.cs#L26-L55) exposes create, status update, assignment, and comment endpoints. [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L76-L191) guards support mutations, validates status transitions, adds audit events, and writes outbox messages.
+[TicketsController](../../src/Api/Controllers/TicketsController.cs#L26-L55) exposes create, status update, assignment, and comment endpoints. [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L78-L193) guards support mutations, validates status transitions, adds audit events, and writes outbox messages.
 
 ## Incident Investigation
 
-[IncidentsPage](../../frontend/src/pages/IncidentsPage.tsx#L19-L36) shows the "Run agent" action only to Admin and Engineer roles. The client calls [runIncidentInvestigation](../../frontend/src/app/api.ts#L63-L64), then [IncidentsController.RunInvestigation](../../src/Api/Controllers/IncidentsController.cs#L42-L47). [OperationsService.RunIncidentInvestigationAsync](../../src/Infrastructure/Operations/OperationsService.cs#L303-L360) writes timeline, agent, approval, audit, and outbox records in one save.
+[IncidentsPage](../../frontend/src/pages/IncidentsPage.tsx#L19-L36) shows the "Run agent" action only to Admin and Engineer roles. The client calls [runIncidentInvestigation](../../frontend/src/app/api.ts#L63-L64), then [IncidentsController.RunInvestigation](../../src/Api/Controllers/IncidentsController.cs#L42-L47). [OperationsService.RunIncidentInvestigationAsync](../../src/Infrastructure/Operations/OperationsService.cs#L305-L436) writes an agent run (with two tool-call children), a pending approval, the incident's candidate fields, and one audit event in one save. It writes **no** timeline event and **no** outbox message (corrected 2026-10-06; see [astraupskill/01-CODEBASE-MAP](../../astraupskill/01-CODEBASE-MAP.md)).
 
 ## Dashboard Metrics
 
@@ -18,12 +18,12 @@ Frontend [TicketsPage](../../frontend/src/pages/TicketsPage.tsx#L6-L29) calls [g
 
 ## Log Search
 
-[LogsPage](../../frontend/src/pages/LogsPage.tsx#L6-L29) loads synthetic logs through [getLogs](../../frontend/src/app/api.ts#L65-L66). [LogsController.Search](../../src/Api/Controllers/LogsController.cs#L13-L17) passes optional filters into [OperationsService.SearchLogsAsync](../../src/Infrastructure/Operations/OperationsService.cs#L363-L390). Log indexes and storage fields are mapped in [NetAiOpsDbContext](../../src/Infrastructure/Persistence/NetAiOpsDbContext.cs#L139-L173).
+[LogsPage](../../frontend/src/pages/LogsPage.tsx#L6-L29) loads synthetic logs through [getLogs](../../frontend/src/app/api.ts#L65-L66). [LogsController.Search](../../src/Api/Controllers/LogsController.cs#L13-L17) passes optional filters into [OperationsService.SearchLogsAsync](../../src/Infrastructure/Operations/OperationsService.cs#L439-L466). Log indexes and storage fields are mapped in [NetAiOpsDbContext](../../src/Infrastructure/Persistence/NetAiOpsDbContext.cs#L139-L173).
 
 ## Role-Aware Navigation
 
-[AppLayout](../../frontend/src/components/AppLayout.tsx#L5-L73) hides navigation items based on role. Server-side authorization still matters: [Program](../../src/Api/Program.cs#L69-L74) defines policies, and mutation guards in [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L441-L467) enforce capabilities even if a user bypasses the UI.
+[AppLayout](../../frontend/src/components/AppLayout.tsx#L5-L73) hides navigation items based on role. Server-side authorization still matters: [Program](../../src/Api/Program.cs#L69-L74) defines policies, and mutation guards in [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L517-L543) enforce capabilities even if a user bypasses the UI.
 
 ## Outbox Processing
 
-Operations write outbox messages through [AddOutboxMessage](../../src/Infrastructure/Operations/OperationsService.cs#L487-L493). [OutboxWorker](../../src/Infrastructure/Operations/OutboxWorker.cs#L9-L52) periodically reads pending messages and marks them processed. The current worker is deliberately simple; production follow-up work should add retry policy, poison-message handling, and observable delivery outcomes.
+Operations write outbox messages through [AddOutbox](../../src/Infrastructure/Operations/OperationsService.cs#L559-L569). [OutboxWorker](../../src/Infrastructure/Operations/OutboxWorker.cs#L9-L52) periodically reads pending messages and marks them processed. The current worker is deliberately simple; production follow-up work should add retry policy, poison-message handling, and observable delivery outcomes.

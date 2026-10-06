@@ -32,7 +32,7 @@ Result: no answer-key or seeded-flaw files found.
 
 ## Opened Source Anchors
 
-Representative anchors used by these docs include [Program](../../src/Api/Program.cs#L15-L137), [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L12-L493), [NetAiOpsDbContext](../../src/Infrastructure/Persistence/NetAiOpsDbContext.cs#L13-L300), [DatabaseSeeder](../../src/Infrastructure/Persistence/DatabaseSeeder.cs#L21-L248), [App](../../frontend/src/app/App.tsx#L16-L43), [api.ts](../../frontend/src/app/api.ts#L24-L91), [AppLayout](../../frontend/src/components/AppLayout.tsx#L5-L73), and [ci.yml](../../.github/workflows/ci.yml#L1-L30).
+Representative anchors used by these docs include [Program](../../src/Api/Program.cs#L15-L137), [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L14-L569), [NetAiOpsDbContext](../../src/Infrastructure/Persistence/NetAiOpsDbContext.cs#L13-L300), [DatabaseSeeder](../../src/Infrastructure/Persistence/DatabaseSeeder.cs#L21-L248), [App](../../frontend/src/app/App.tsx#L16-L43), [api.ts](../../frontend/src/app/api.ts#L24-L91), [AppLayout](../../frontend/src/components/AppLayout.tsx#L5-L73), and [ci.yml](../../.github/workflows/ci.yml#L1-L30).
 
 ## Self-Audit
 
@@ -47,7 +47,7 @@ Ten reopened/checked representative anchors:
 1. [Program](../../src/Api/Program.cs#L15-L137)
 2. [TicketsController](../../src/Api/Controllers/TicketsController.cs#L8-L55)
 3. [IncidentsController](../../src/Api/Controllers/IncidentsController.cs#L8-L47)
-4. [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L12-L493)
+4. [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L14-L569)
 5. [NetAiOpsDbContext](../../src/Infrastructure/Persistence/NetAiOpsDbContext.cs#L13-L300)
 6. [App](../../frontend/src/app/App.tsx#L16-L43)
 7. [api.ts](../../frontend/src/app/api.ts#L43-L91)

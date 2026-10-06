@@ -12,6 +12,6 @@ Good next test:
 public void StatusTransitionRules_AreEnforced(...)
 ```
 
-The production code to target is [CanTransition](../../src/Infrastructure/Operations/OperationsService.cs#L454-L467). Because it is currently private, you can test through `UpdateTicketStatusAsync` or decide whether extracting a small policy object is worth it.
+The production code to target is [IsAllowedTicketTransition](../../src/Infrastructure/Operations/OperationsService.cs#L522-L535). Because it is currently private, you can test through `UpdateTicketStatusAsync` or decide whether extracting a small policy object is worth it.
 
 Avoid over-mocking EF for query-heavy methods. For [DashboardService](../../src/Infrastructure/Persistence/DashboardService.cs#L8-L53), an integration test with a test database or SQLite-compatible shape will teach more than a mock.

@@ -6,7 +6,7 @@ The backend uses a layered shape. [Program](../../src/Api/Program.cs#L15-L137) i
 
 The application layer defines stable contracts. [OperationsDtos](../../src/Application/Operations/OperationsDtos.cs#L5-L115) defines the records the API returns and accepts. [RequestContext](../../src/Application/Common/RequestContext.cs#L5-L18) turns claims into role capabilities so services do not read HTTP primitives directly.
 
-Infrastructure owns EF Core, auth implementations, dashboard queries, operations behavior, seeding, and the background outbox loop. [NetAiOpsDbContext](../../src/Infrastructure/Persistence/NetAiOpsDbContext.cs#L13-L300) maps tables and relationships. [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L12-L493) implements the current business workflows. [OutboxWorker](../../src/Infrastructure/Operations/OutboxWorker.cs#L9-L52) processes pending outbox rows.
+Infrastructure owns EF Core, auth implementations, dashboard queries, operations behavior, seeding, and the background outbox loop. [NetAiOpsDbContext](../../src/Infrastructure/Persistence/NetAiOpsDbContext.cs#L13-L300) maps tables and relationships. [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L14-L569) implements the current business workflows. [OutboxWorker](../../src/Infrastructure/Operations/OutboxWorker.cs#L9-L52) processes pending outbox rows.
 
 ## Frontend
 

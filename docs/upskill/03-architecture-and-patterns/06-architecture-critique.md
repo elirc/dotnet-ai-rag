@@ -7,7 +7,7 @@
 | Layered backend | [Program](../../../src/Api/Program.cs#L13-L16) composes infrastructure rather than implementing it inline | Keeps HTTP, persistence, and domain concepts separable. |
 | Explicit JWT policies | [Program](../../../src/Api/Program.cs#L46-L51) | Gives future modules named authorization decisions. |
 | Explicit EF mapping | [NetAiOpsDbContext](../../../src/Infrastructure/Persistence/NetAiOpsDbContext.cs#L12-L30) | Makes schema reviewable. |
-| Frontend route shell | [App](../../../frontend/src/app/App.tsx#L21-L45) | Lets later phases land into an existing navigation model. |
+| Frontend route shell | [App](../../../frontend/src/app/App.tsx#L21-L43) | Lets later phases land into an existing navigation model. |
 | Query loading/error states | [DashboardPage](../../../frontend/src/pages/DashboardPage.tsx#L13-L19) | Prevents blank screens during failure. |
 
 ## Risks And Tradeoffs

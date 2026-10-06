@@ -23,7 +23,7 @@ Acceptance criteria:
 
 ## Ticket 3: Bound Log Query Text
 
-Context: [OperationsService.SearchLogsAsync](../../src/Infrastructure/Operations/OperationsService.cs#L363-L390) accepts `query`.
+Context: [OperationsService.SearchLogsAsync](../../src/Infrastructure/Operations/OperationsService.cs#L439-L466) accepts `query`.
 
 Acceptance criteria:
 

@@ -2,7 +2,7 @@
 
 | Risk | Evidence | Mitigation |
 | --- | --- | --- |
-| Service grows too broad | [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L12-L493) spans many domains | Split by workflow ownership when adding more mutations |
+| Service grows too broad | [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L14-L569) spans many domains | Split by workflow ownership when adding more mutations |
 | Startup migration risk | [DatabaseSeeder](../../src/Infrastructure/Persistence/DatabaseSeeder.cs#L16-L18) runs migrations on startup | Move migrations to release pipeline for production |
 | Outbox has weak failure model | [OutboxWorker](../../src/Infrastructure/Operations/OutboxWorker.cs#L32-L52) marks pending rows processed | Add retry count, last error, dead-letter status, metrics |
 | Authorization gaps | Policies exist in [Program](../../src/Api/Program.cs#L69-L74), but few tests cover API paths | Add integration tests for each role and mutation |

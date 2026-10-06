@@ -20,7 +20,7 @@ Public surfaces are controller routes, React routes, environment/config keys, an
 | Login API | `POST /api/auth/login` | [AuthController.Login](../../../src/Api/Controllers/AuthController.cs#L11-L17) |
 | Dashboard API | `GET /api/dashboard/summary` with JWT | [DashboardController.Summary](../../../src/Api/Controllers/DashboardController.cs#L7-L17) |
 | Users API | `GET /api/users` for Admin policy | [UsersController.List](../../../src/Api/Controllers/UsersController.cs#L7-L17) |
-| Frontend routes | `/login`, `/dashboard`, future placeholders | [App](../../../frontend/src/app/App.tsx#L21-L45) |
+| Frontend routes | `/login`, `/dashboard`, future placeholders | [App](../../../frontend/src/app/App.tsx#L21-L43) |
 | Database table | `users` with unique email | [InitialIdentity.Up](../../../src/Infrastructure/Persistence/Migrations/20260614190221_InitialIdentity.cs#L14-L36) |
 
 ## Boundary Rule

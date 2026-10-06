@@ -1,5 +1,7 @@
 # Architecture
 
+> **Status (verified 2026-10-06):** this page was written during Phase 1. Tickets, incidents, logs, knowledge documents, agent runs, approvals, eval runs, the outbox, and their EF migrations now exist, and the dashboard computes real counts from them (`src/Infrastructure/Persistence/DashboardService.cs`). The "Phase Boundaries" section below is historical. `src/Workers` and `src/Shared` are still empty placeholder projects; the `OutboxWorker` runs inside the API process as a hosted service.
+
 NetAiOps is organized as a layered ASP.NET Core backend plus a React frontend.
 
 ## Backend Shape

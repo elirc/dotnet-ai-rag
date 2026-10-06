@@ -1,5 +1,7 @@
 # Agent Design
 
+> **Implementation status (verified 2026-10-06):** the `IAgent`/`IAgentTool` abstractions below do not exist in `src/`. The one implemented "agent" is a deterministic method, `OperationsService.RunIncidentInvestigationAsync`. It runs two recorded tools (`SearchLogs`, `SearchKnowledge`), calls no model, saves `TotalEstimatedTokens = 0`, and creates a `Pending` `HumanApproval` that no endpoint can approve or reject yet. Ticket triage text (`AiSummary`) is a fixed template string, not an agent. See `astraupskill/01-CODEBASE-MAP.md`.
+
 Agents begin in Phase 4. The key rule is that agents are backend services with tracked runs, not frontend-only chat logic.
 
 ## Core Abstractions

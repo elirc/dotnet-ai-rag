@@ -5,7 +5,7 @@
 - Role policies are configured in [Program](../../src/Api/Program.cs#L69-L74).
 - Login is rate-limited by policy in [Program](../../src/Api/Program.cs#L19-L31).
 - Correlation and security headers are added in [CorrelationAndSecurityHeadersMiddleware](../../src/Api/Middleware/CorrelationAndSecurityHeadersMiddleware.cs#L3-L23).
-- Resource checks happen in [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L441-L467).
+- Resource checks happen in [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L517-L543).
 
 Production gaps to close:
 

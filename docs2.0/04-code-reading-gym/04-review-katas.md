@@ -2,7 +2,7 @@
 
 ## Kata 1: Ticket Status Change
 
-Review [OperationsService.UpdateTicketStatusAsync](../../src/Infrastructure/Operations/OperationsService.cs#L120-L145). Questions:
+Review [OperationsService.UpdateTicketStatusAsync](../../src/Infrastructure/Operations/OperationsService.cs#L122-L147). Questions:
 
 - What happens if a Viewer calls this endpoint?
 - Where is status transition validation?
@@ -11,7 +11,7 @@ Review [OperationsService.UpdateTicketStatusAsync](../../src/Infrastructure/Oper
 
 ## Kata 2: Log Search
 
-Review [OperationsService.SearchLogsAsync](../../src/Infrastructure/Operations/OperationsService.cs#L363-L390). Questions:
+Review [OperationsService.SearchLogsAsync](../../src/Infrastructure/Operations/OperationsService.cs#L439-L466). Questions:
 
 - Are page bounds enforced?
 - Which fields can be filtered?

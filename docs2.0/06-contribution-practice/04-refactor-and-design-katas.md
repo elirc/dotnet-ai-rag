@@ -2,11 +2,11 @@
 
 ## Kata 1: Extract Ticket Policy
 
-Current logic lives inside [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L441-L467). Extract it only if doing so improves testability without hiding domain meaning.
+Current logic lives inside [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L517-L543). Extract it only if doing so improves testability without hiding domain meaning.
 
 ## Kata 2: Query Object For Logs
 
-[OperationsService.SearchLogsAsync](../../src/Infrastructure/Operations/OperationsService.cs#L363-L390) is a compact query today. Design a `LogSearchQuery` object if filters grow to include environment, host, incident, trace, time range, and exception type.
+[OperationsService.SearchLogsAsync](../../src/Infrastructure/Operations/OperationsService.cs#L439-L466) is a compact query today. Design a `LogSearchQuery` object if filters grow to include environment, host, incident, trace, time range, and exception type.
 
 ## Kata 3: Dashboard Projection
 

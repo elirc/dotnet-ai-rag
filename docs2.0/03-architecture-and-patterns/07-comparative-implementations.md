@@ -2,7 +2,7 @@
 
 ## Direct EF Core Service vs Repository
 
-Current choice: [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L16-L390) uses `DbContext` and LINQ directly. This is clear and efficient for a small team.
+Current choice: [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L18-L466) uses `DbContext` and LINQ directly. This is clear and efficient for a small team.
 
 Alternative: repository/query objects. This can reduce service size and improve reuse, but often hides useful EF query details and adds abstraction too early.
 
@@ -18,7 +18,7 @@ Use vertical slices when endpoint behavior diverges heavily or when many teams o
 
 ## Outbox Worker vs Direct Side Effects
 
-Current choice: service writes an outbox row through [AddOutboxMessage](../../src/Infrastructure/Operations/OperationsService.cs#L487-L493), and [OutboxWorker](../../src/Infrastructure/Operations/OutboxWorker.cs#L9-L52) processes later. This protects against losing side effects when a request succeeds but an external call fails.
+Current choice: service writes an outbox row through [AddOutbox](../../src/Infrastructure/Operations/OperationsService.cs#L559-L569), and [OutboxWorker](../../src/Infrastructure/Operations/OutboxWorker.cs#L9-L52) processes later. This protects against losing side effects when a request succeeds but an external call fails.
 
 Alternative: send Slack/email/webhook inline. Easier initially, but less reliable and harder to retry.
 

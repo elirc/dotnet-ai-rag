@@ -6,7 +6,7 @@
 2. [OperationsDtos](../../src/Application/Operations/OperationsDtos.cs#L5-L115): learn the API vocabulary before reading implementation.
 3. [RequestContext](../../src/Application/Common/RequestContext.cs#L5-L18): learn role capability flags.
 4. [TicketsController](../../src/Api/Controllers/TicketsController.cs#L8-L55) and [IncidentsController](../../src/Api/Controllers/IncidentsController.cs#L8-L47): learn the HTTP surface.
-5. [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L12-L493): learn business behavior.
+5. [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L14-L569): learn business behavior.
 6. [NetAiOpsDbContext](../../src/Infrastructure/Persistence/NetAiOpsDbContext.cs#L13-L300): learn storage shape.
 7. [DatabaseSeeder](../../src/Infrastructure/Persistence/DatabaseSeeder.cs#L21-L248): learn the demo scenarios.
 8. [OutboxWorker](../../src/Infrastructure/Operations/OutboxWorker.cs#L9-L52): learn asynchronous side effects.

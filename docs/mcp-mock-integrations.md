@@ -1,5 +1,7 @@
 # MCP Mock Integrations
 
+> **Implementation status (verified 2026-10-06):** not started. No MCP-style servers, contracts, or call-log tables exist in `src/`. This file is a plan.
+
 Phase 5 adds an MCP-style integration layer. The first version will not need real MCP transport; it will model external tool capabilities behind a consistent contract.
 
 ## Planned Mock Servers

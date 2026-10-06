@@ -8,6 +8,27 @@ The central distinction is between a document matching an incident description a
 
 The tests exercise ranking directly and application persistence through an isolated EF InMemory fixture. That fixture can demonstrate the service's saved relationships and serialized fields; it cannot establish PostgreSQL transaction isolation or production query performance. Read the final verification evidence with that boundary in mind. Existing project guides remain useful for setup and architecture, while this course concentrates on one observable investigation workflow.
 
+## Route and time budget
+
+| Chapter | You'll be able to… | Time |
+| --- | --- | --- |
+| [01 Codebase map](01-CODEBASE-MAP.md) | name every hop from `POST …/run-investigation` to the single `SaveChangesAsync`, with line numbers | 45 min |
+| [02 Concepts](02-CONCEPTS.md) | score any query against any document by hand (worked example: the test fixture scores 17) | 1 h |
+| [03 Worked change](03-WORKED-CHANGE.md) | explain the before/after diff and the five values the old code invented, and list what the change left unfixed | 1 h |
+| [04 Testing & debugging](04-TESTING-AND-DEBUGGING.md) | say what each of the 11 test cases pins, and what none of them pins | 1 h |
+| [05 Practice](05-PRACTICE.md) → [06 Solutions](06-SOLUTIONS-AND-REVIEW.md) | seven exercises, easy → hard, each with a Check you can confirm against code | 2-3 h |
+| [07 Trace lab](07-TRACE-LAB.md) | trace the test fixture *and* the seeded demo data into saved rows | 1 h |
+| [VERIFICATION](VERIFICATION.md) | read the recorded evidence (and its gaps) like a reviewer | 15 min |
+
+Then continue with the [extended course](extended-course/README.md): 32 deeper lessons
+(approval API boundary, outbox semantics, concurrency, corpus scale, document trust) with
+separate answer files.
+
+**Before you start:** the repo also contains two older documentation trees,
+[`docs/upskill/`](../docs/upskill/README.md) and [`docs2.0/`](../docs2.0/README.md). They
+predate the retrieval change described here, so where they describe the investigation
+command or quote test counts, this course is the current one.
+
 ## Source excerpt
 
 From [src/Application/Retrieval/LexicalRetriever.cs](../src/Application/Retrieval/LexicalRetriever.cs).

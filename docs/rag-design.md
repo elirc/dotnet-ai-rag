@@ -1,5 +1,7 @@
 # RAG Design
 
+> **Implementation status (verified 2026-10-06):** none of the planned interfaces below (`IEmbeddingClient`, `ILlmClient`, `IDocumentChunker`, `IRetrievalService`) exists in `src/`. There are no embeddings, chunks, vectors, or answer generation. What *does* exist is a deterministic lexical ranker, `src/Application/Retrieval/LexicalRetriever.cs` (title/tag/content weights 4/3/1, threshold 3, top 3), used by the incident investigation. It records `heuristicScore`, not model confidence. `astraupskill/02-CONCEPTS.md` explains it. Read the rest of this file as a design plan.
+
 RAG begins in Phase 3. The design goal is to keep retrieval, answer generation, and citation formatting separate.
 
 ## Planned Interfaces

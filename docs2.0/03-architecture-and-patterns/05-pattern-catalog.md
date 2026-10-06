@@ -6,10 +6,10 @@ Thin controller: [DashboardController](../../src/Api/Controllers/DashboardContro
 
 Application contract: [OperationsDtos](../../src/Application/Operations/OperationsDtos.cs#L5-L115) defines public shapes independently from EF mapping details.
 
-Service boundary: [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L12-L493) coordinates domain workflows, persistence, authorization checks, audit, and outbox writes.
+Service boundary: [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L14-L569) coordinates domain workflows, persistence, authorization checks, audit, and outbox writes.
 
-Resource authorization: [CanReadTicket](../../src/Infrastructure/Operations/OperationsService.cs#L441-L452) allows broader access to Admin/Engineer and scoped access for SupportAnalyst.
+Resource authorization: [CanReadTicket](../../src/Infrastructure/Operations/OperationsService.cs#L517-L528) allows broader access to Admin/Engineer and scoped access for SupportAnalyst.
 
-Outbox: [AddOutboxMessage](../../src/Infrastructure/Operations/OperationsService.cs#L487-L493) plus [OutboxWorker](../../src/Infrastructure/Operations/OutboxWorker.cs#L9-L52).
+Outbox: [AddOutbox](../../src/Infrastructure/Operations/OperationsService.cs#L559-L569) plus [OutboxWorker](../../src/Infrastructure/Operations/OutboxWorker.cs#L9-L52).
 
 Role-aware shell: [AppLayout](../../frontend/src/components/AppLayout.tsx#L5-L73) filters UI affordances while backend policies remain authoritative.

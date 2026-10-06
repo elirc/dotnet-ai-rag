@@ -1,6 +1,6 @@
 # Performance Thinking
 
-Current strengths: list endpoints clamp `pageSize` through constants in [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L12-L19), and ticket/log queries use pagination in [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L16-L58) and [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L363-L390).
+Current strengths: list endpoints clamp `pageSize` through constants in [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L14-L21), and ticket/log queries use pagination in [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L18-L60) and [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L439-L466).
 
 Database mappings include indexes for common filters, such as ticket status/priority/created time in [NetAiOpsDbContext](../../src/Infrastructure/Persistence/NetAiOpsDbContext.cs#L53-L81), incident severity/status in [NetAiOpsDbContext](../../src/Infrastructure/Persistence/NetAiOpsDbContext.cs#L110-L137), and log service/level/timestamp in [NetAiOpsDbContext](../../src/Infrastructure/Persistence/NetAiOpsDbContext.cs#L139-L173).
 

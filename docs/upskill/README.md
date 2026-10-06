@@ -1,5 +1,16 @@
 ﻿# NetAiOps Upskill Lab
 
+> **Status (2026-10-06):** this suite was written before the incident-investigation command
+> was rebuilt around `LexicalRetriever` (see [`astraupskill/`](../../astraupskill/README.md),
+> the current course for that workflow). Since then: the test suite has grown from the "1
+> test" recorded below to **11 test cases** (7 `[Fact]` + one `[Theory]` × 4) across 4
+> files, including retrieval and investigation-persistence tests; links into
+> `OperationsService.cs` have been re-pointed to the current line numbers; and three method
+> names that never existed in the code were corrected (`AddOutboxMessage` → `AddOutbox`,
+> `CanTransition` → `IsAllowedTicketTransition`, `AddTimelineAsync` →
+> `AddIncidentTimelineAsync`). The repo now has commits, so the "unborn branch" snapshot
+> note below is historical.
+
 Snapshot: `git rev-parse HEAD` could not produce a commit because this workspace is on an unborn Git branch with no commits. Fallback manifest hash for this documentation pass: `3b096fcb56b8df68733c39d8b9ac7346df0033384447fae750e7892a4d6f4106`. See [verification log](08-reference/verification-log.md).
 
 ## Repo Identity

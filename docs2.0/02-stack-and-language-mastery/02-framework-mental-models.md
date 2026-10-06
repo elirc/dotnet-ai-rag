@@ -8,7 +8,7 @@ Middleware wraps requests before controllers run. [ExceptionHandlingMiddleware](
 
 ## EF Core
 
-EF Core maps domain objects to relational tables in [NetAiOpsDbContext](../../src/Infrastructure/Persistence/NetAiOpsDbContext.cs#L33-L300). Services build LINQ queries, as in [OperationsService.ListTicketsAsync](../../src/Infrastructure/Operations/OperationsService.cs#L16-L58) and [OperationsService.SearchLogsAsync](../../src/Infrastructure/Operations/OperationsService.cs#L363-L390).
+EF Core maps domain objects to relational tables in [NetAiOpsDbContext](../../src/Infrastructure/Persistence/NetAiOpsDbContext.cs#L33-L300). Services build LINQ queries, as in [OperationsService.ListTicketsAsync](../../src/Infrastructure/Operations/OperationsService.cs#L18-L60) and [OperationsService.SearchLogsAsync](../../src/Infrastructure/Operations/OperationsService.cs#L439-L466).
 
 ## React Query
 

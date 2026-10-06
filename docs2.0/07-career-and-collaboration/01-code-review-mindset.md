@@ -1,6 +1,6 @@
 # Code Review Mindset
 
-Review for behavior first, then safety, then maintainability. For example, when reviewing [OperationsService.UpdateTicketStatusAsync](../../src/Infrastructure/Operations/OperationsService.cs#L120-L145), ask:
+Review for behavior first, then safety, then maintainability. For example, when reviewing [OperationsService.UpdateTicketStatusAsync](../../src/Infrastructure/Operations/OperationsService.cs#L122-L147), ask:
 
 - Can the wrong role call this?
 - Are invalid transitions blocked?

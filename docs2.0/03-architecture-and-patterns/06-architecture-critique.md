@@ -2,11 +2,11 @@
 
 ## Strengths
 
-The repo now has a credible training surface: real operational entities, database-backed dashboard metrics, bounded list APIs, resource-aware checks, seeded incidents/logs/runbooks, human approvals, an outbox worker, middleware, CI, and multiple frontend workspaces. These are visible across [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L12-L493), [NetAiOpsDbContext](../../src/Infrastructure/Persistence/NetAiOpsDbContext.cs#L13-L300), [Program](../../src/Api/Program.cs#L15-L137), and [App](../../frontend/src/app/App.tsx#L16-L43).
+The repo now has a credible training surface: real operational entities, database-backed dashboard metrics, bounded list APIs, resource-aware checks, seeded incidents/logs/runbooks, human approvals, an outbox worker, middleware, CI, and multiple frontend workspaces. These are visible across [OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L14-L569), [NetAiOpsDbContext](../../src/Infrastructure/Persistence/NetAiOpsDbContext.cs#L13-L300), [Program](../../src/Api/Program.cs#L15-L137), and [App](../../frontend/src/app/App.tsx#L16-L43).
 
 ## Risks
 
-[OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L12-L493) is doing too much. That is acceptable for a training phase, but it will become painful as tests and workflows expand.
+[OperationsService](../../src/Infrastructure/Operations/OperationsService.cs#L14-L569) is doing too much. That is acceptable for a training phase, but it will become painful as tests and workflows expand.
 
 Validation is light. Controllers accept request DTOs, but there is no comprehensive validation layer anchored in the current code. That is a production gap.
 

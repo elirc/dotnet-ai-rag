@@ -1,10 +1,21 @@
 # NetAiOps Upskill Lab 2.0
 
+> **Status (2026-10-06):** this suite predates the rebuild of the incident-investigation
+> command around `LexicalRetriever`. For that workflow, [`astraupskill/`](../astraupskill/README.md)
+> is current. Since this suite was written, the tests have grown from 5 to **11 test cases**
+> (7 `[Fact]` + one `[Theory]` × 4), links into `OperationsService.cs` have been re-pointed to
+> current line numbers, and three method names that never existed in the code were
+> corrected (`AddOutboxMessage` → `AddOutbox`, `CanTransition` →
+> `IsAllowedTicketTransition`, `AddTimelineAsync` → `AddIncidentTimelineAsync`). The
+> key-flows description of what the investigation saves was also corrected (no timeline
+> event, no outbox message). The "unborn branch" note is historical; the repo now has
+> commits.
+
 Snapshot: `git rev-parse HEAD` could not produce a commit because this workspace is on an unborn Git branch with no commits. `git log --oneline -30` also failed with `fatal: your current branch 'main' does not have any commits yet`. Fallback manifest hash for this documentation pass: `ee26a296a11a8f245385f609e37d761721a64bee674be0152b11abda35e27c87` across 181 tracked workspace files, excluding build outputs and this `docs2.0` folder. See [verification log](08-reference/verification-log.md).
 
 ## Repo Identity
 
-NetAiOps is a synthetic enterprise-style C#/.NET and React training project that now models a mid-size-company internal operations platform. The backend composes controllers, authentication, EF Core persistence, policies, middleware, health checks, and seeded operational scenarios in [Program](../src/Api/Program.cs#L15-L137). The core product behavior is concentrated in [OperationsService](../src/Infrastructure/Operations/OperationsService.cs#L12-L493), with durable tables configured in [NetAiOpsDbContext](../src/Infrastructure/Persistence/NetAiOpsDbContext.cs#L13-L300). The frontend has real routed workspaces for dashboard, tickets, incidents, logs, knowledge, agents, evals, users, and settings in [App](../frontend/src/app/App.tsx#L16-L43), not only placeholders.
+NetAiOps is a synthetic enterprise-style C#/.NET and React training project that now models a mid-size-company internal operations platform. The backend composes controllers, authentication, EF Core persistence, policies, middleware, health checks, and seeded operational scenarios in [Program](../src/Api/Program.cs#L15-L137). The core product behavior is concentrated in [OperationsService](../src/Infrastructure/Operations/OperationsService.cs#L14-L569), with durable tables configured in [NetAiOpsDbContext](../src/Infrastructure/Persistence/NetAiOpsDbContext.cs#L13-L300). The frontend has real routed workspaces for dashboard, tickets, incidents, logs, knowledge, agents, evals, users, and settings in [App](../frontend/src/app/App.tsx#L16-L43), not only placeholders.
 
 This repo still has no organic Git history, so modules 06 and 07 are written as a simulated company contribution workflow. Treat the exercises as if you were joining a team with code review, CI, production risk, and operational ownership.
 

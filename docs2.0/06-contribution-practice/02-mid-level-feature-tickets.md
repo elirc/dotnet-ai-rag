@@ -2,7 +2,7 @@
 
 ## Feature 1: Ticket Create UI
 
-Backend support exists in [TicketsController.Create](../../src/Api/Controllers/TicketsController.cs#L26-L31) and [OperationsService.CreateTicketAsync](../../src/Infrastructure/Operations/OperationsService.cs#L76-L118). Build a frontend form that calls [createTicket](../../frontend/src/app/api.ts#L57-L58).
+Backend support exists in [TicketsController.Create](../../src/Api/Controllers/TicketsController.cs#L26-L31) and [OperationsService.CreateTicketAsync](../../src/Infrastructure/Operations/OperationsService.cs#L78-L120). Build a frontend form that calls [createTicket](../../frontend/src/app/api.ts#L57-L58).
 
 Acceptance criteria: form validation, optimistic or post-success refresh, error state, accessible labels, and build pass.
 
@@ -14,4 +14,4 @@ Acceptance criteria: migration, worker logic, tests for retry behavior, dashboar
 
 ## Feature 3: Incident Timeline UI
 
-Backend details include incident timeline events in [OperationsService.GetIncidentAsync](../../src/Infrastructure/Operations/OperationsService.cs#L222-L225) and timeline mutation in [OperationsService.AddTimelineAsync](../../src/Infrastructure/Operations/OperationsService.cs#L271-L300). Build a detail page that shows timeline and lets permitted users add events.
+Backend details include incident timeline events in [OperationsService.GetIncidentAsync](../../src/Infrastructure/Operations/OperationsService.cs#L224-L227) and timeline mutation in [OperationsService.AddIncidentTimelineAsync](../../src/Infrastructure/Operations/OperationsService.cs#L273-L302). Build a detail page that shows timeline and lets permitted users add events.
